@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{resources/css/converterContent.css}"/>
+    <title>Title</title>
+</head>
+<body>
+    <header th:replace="~{resources/fragments/header::header}"></header>
+    <section th:replace="~{resources/fragments/converterContent::converterContent}"></section>
+    <main layout:fragment="result"></main>
+</body>
+</html>

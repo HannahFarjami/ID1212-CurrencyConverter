@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{resources/css/converterContent.css}"/>
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1>Admin Page</h1>
+</header>
+<section th:fragment="converterContent">
+    <div class="center-on-page">
+        <form action="#" th:action="@{/update}" th:object="${changeRateForm}" method="post">
+            <h1>New rate for conversion:</h1>
+            <input type="text" th:field="*{newRate}"/>
+            <span th:if="${#fields.hasErrors('newRate')}" th:errors="*{newRate}"></span>
+            <h1>From:</h1>
+            <div class="select">
+                <select th:field="*{from}" name="slct">
+                    <option th:value="SEK" th:text="SEK"></option>
+                    <option th:value="EUR" th:text="EUR"></option>
+                    <option th:value="GBP" th:text="GBP"></option>
+                    <option th:value="USD" th:text="USD"></option>
+                </select>
+            </div>
+            <h1>To:</h1>
+            <div class="select">
+                <select th:field="*{to}"name="slct">
+                    <option value="SEK" th:text="SEK"></option>
+                    <option value="EUR" th:text="EUR"></option>
+                    <option value="GBP" th:text="GBP"></option>
+                    <option value="USD" th:text="USD"></option>
+                </select>
+            </div>
+            <p>
+                <input type="submit" value="Update"/>
+            </p>
+        </form>
+    </div>
+</section>
+</body>
