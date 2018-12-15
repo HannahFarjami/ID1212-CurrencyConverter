@@ -11,6 +11,8 @@
 </header>
 <section th:fragment="converterContent">
     <div class="center-on-page">
+        <h2>Number of conversion to now:</h2>
+        <p th:text="${integer}"/>
         <form action="#" th:action="@{/update}" th:object="${changeRateForm}" method="post">
             <h1>New rate for conversion:</h1>
             <input type="text" th:field="*{newRate}"/>

@@ -4,6 +4,7 @@ package main.presentation;
 import main.application.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,7 +20,9 @@ public class AdminController {
 
 
     @GetMapping("/admin")
-    public String adminPage(ChangeRateForm changeRateForm){
+    public String adminPage(ChangeRateForm changeRateForm, Model model){
+        Integer counterValue = adminService.getCounter();
+        model.addAttribute(counterValue);
         return "adminPage";
     }
 
