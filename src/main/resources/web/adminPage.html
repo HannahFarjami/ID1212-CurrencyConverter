@@ -17,7 +17,7 @@
             <h1>New rate for conversion:</h1>
             <input type="text" th:field="*{newRate}"/>
             <span th:if="${#fields.hasErrors('newRate')}" th:errors="*{newRate}"></span>
-            <h1>From:</h1>
+            <h1>From Currency:</h1>
             <div class="select">
                 <select th:field="*{from}" name="slct">
                     <option th:value="SEK" th:text="SEK"></option>
@@ -26,7 +26,7 @@
                     <option th:value="USD" th:text="USD"></option>
                 </select>
             </div>
-            <h1>To:</h1>
+            <h1>To Currency:</h1>
             <div class="select">
                 <select th:field="*{to}"name="slct">
                     <option value="SEK" th:text="SEK"></option>
@@ -36,9 +36,10 @@
                 </select>
             </div>
             <p>
-                <input type="submit" value="Update"/>
+                <input class ="btn" type="submit" value="Update"/>
             </p>
         </form>
+        <span th:if="${string != null}" th:text="${string}">someValue</span>
     </div>
 </section>
 </body>
