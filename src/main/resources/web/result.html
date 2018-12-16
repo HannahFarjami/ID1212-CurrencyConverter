@@ -8,9 +8,9 @@
 <body>
 <main layout:fragment="result">
     <section class="center-on-page2">
-        <p th:text="${conversionForm.from}"/>
-        <p th:text="${conversionForm.to}"/>
-        <p th:text="${double}"/>
+        <h1><span th:text="${#numbers.formatDecimal(conversionForm.amount,0,'COMMA',2,'POINT')}"></span> <span th:text="${conversionForm.from}"> </span> is equal to
+            <span th:text="${#numbers.formatDecimal(double,0,'COMMA',2,'POINT')}"></span> <span th:text="${conversionForm.to}"></span></h1>
+
     </section>
 </main>
 

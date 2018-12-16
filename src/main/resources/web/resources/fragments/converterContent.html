@@ -6,16 +6,13 @@
     <title>Title</title>
 </head>
 <body>
-<header>
-    <h1>New dialect example</h1>
-</header>
 <section th:fragment="converterContent">
     <div class="center-on-page">
         <form action="#" th:action="@{/result}" th:object="${conversionForm}" method="post">
-            <h1>Amount:</h1>
+            <h1>Amount to convert:</h1>
             <input type="text" th:field="*{amount}"/>
             <span th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span>
-            <h1>From:</h1>
+            <h1>From Currency:</h1>
             <div class="select">
                 <select th:field="*{from}" name="slct">
                     <option th:value="SEK" th:text="SEK"></option>
@@ -24,7 +21,7 @@
                     <option th:value="USD" th:text="USD"></option>
                 </select>
             </div>
-            <h1>To:</h1>
+            <h1>To Currency:</h1>
             <div class="select">
                 <select th:field="*{to}"name="slct">
                     <option value="SEK" th:text="SEK"></option>
@@ -34,7 +31,7 @@
                 </select>
             </div>
             <p>
-                <input type="submit" value="Convert"/>
+                <input class="btn" type="submit" value="Convert"/>
             </p>
         </form>
     </div>
